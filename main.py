@@ -28,8 +28,8 @@ data_file = str(config['t1'])
 run time is approx 3-4 min
 '''
 # set project directory (where all subject directories are)
-project_dir = '/Users/antonio/Desktop/proj-6396777a6881d56fbfcd0bbc/'
-out_dir = '/Users/antonio/Desktop/proj-6396777a6881d56fbfcd0bbc/atlas'
+#project_dir = '/Users/antonio/Desktop/proj-6396777a6881d56fbfcd0bbc/'
+#out_dir = '/Users/antonio/Desktop/proj-6396777a6881d56fbfcd0bbc/atlas'
 
 #make output directory if it does not exist
 if not os.path.exists(out_dir):
@@ -73,6 +73,6 @@ for jj in range(len(tract_names)):
     converted_array = np.array(data,dtype=np.float32)
     new_img = nib.Nifti1Image(converted_array,affine=input_affine) #turn into nifti
     filename = str(tract_count)+'_'+name[3]+'_'+name[0]+'_'+'[min_'+str(np.min(data))+'_'+'max_'+str(np.max(data))+']'+'.nii.gz'
-    nib.save(new_img,os.path.join(out_dir+'/',filename)) # save file
+    nib.save(new_img,os.path.join('out_dir'+'/',filename)) # save file
     if jj%2:
         tract_count+=1 # update tract counter
