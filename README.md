@@ -6,6 +6,7 @@ This app takes binarized rois (tract endpoints) and computes a probabilistic atl
 
 Input:
   - subject pool of binarized rois
+  
 output:
   - probabilistic (0-1) mask of input rois 
 
