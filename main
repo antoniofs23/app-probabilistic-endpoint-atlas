@@ -1,18 +1,18 @@
 #!/bin/bash
 
-#SBATCH --job-name=template
+#SBATCH --job-name=fit_psych
 #SBATCH --ntasks-per-node=1
 #SBATCH --mem=1G
-#SBATCH --time=00:15:00
-
-# Copyright (c) 2020 brainlife.io at University of Texas at Austin and Indiana University
-# 
+#SBATCH --time=00:05:00
+ 
 # This is the main file run by the brainlife.io orchestration system
 #
-# Author: Franco Pestilli
+# Author: Antonio Fernandez
 
 # make output directory
 mkdir -p out_dir
 
 # run the actual python code
+# can run python3.7 by removing the 1.1.1 --otherwise assumes 3.6
+# works now in 3.6
 singularity exec docker://brainlife/dipy:1.1.1 python3 main.py
